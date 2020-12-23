@@ -26,3 +26,11 @@ x
 ;((1 2) (3 4))
 ;((3 4) (1 2))
 ;((4 3) (2 1))
+
+; also
+(define (deep-reverse-tree items)
+  (if (pair? items)
+      (map deep-reverse-tree (reverse items))
+      items))
+
+(deep-reverse-tree x)
