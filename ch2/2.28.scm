@@ -15,3 +15,12 @@
 
 ;(1 2 3 4)
 ;(1 2 3 4 1 2 3 4)
+
+; also, from page 159
+(define (enumerate-tree tree)
+  (cond ((null? tree) nil)
+        ((not (pair? tree)) (list tree))
+        (else (append (enumerate-tree (car tree))
+                      (enumerate-tree (cdr tree))))))
+(enumerate-tree x)
+(enumerate-tree (list x x))
